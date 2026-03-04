@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
-import { ShoppingBag, Users, BookOpen, ShieldCheck, TrendingUp, Store, Package } from "lucide-react";
+import { ShoppingBag, Users, BookOpen, ShieldCheck, TrendingUp, Store, Package, Bug, Sprout, Sparkles, BarChart3, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
