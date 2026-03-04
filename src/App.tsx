@@ -16,6 +16,11 @@ import Marketplace from "./pages/Marketplace";
 import Cart from "./pages/Cart";
 import Orders from "./pages/Orders";
 import NotificationSettings from "./pages/NotificationSettings";
+import CropHealth from "./pages/CropHealth";
+import YieldPrediction from "./pages/YieldPrediction";
+import SmartRecommendations from "./pages/SmartRecommendations";
+import AdvancedAnalytics from "./pages/AdvancedAnalytics";
+import Weather from "./pages/Weather";
 import NotFound from "./pages/NotFound";
 import ChatBot from "./components/ChatBot";
 
@@ -41,6 +46,11 @@ const App = () => (
             <Route path="/cart" element={<Cart />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/notification-settings" element={<NotificationSettings />} />
+            <Route path="/crop-health" element={<CropHealth />} />
+            <Route path="/yield-prediction" element={<YieldPrediction />} />
+            <Route path="/smart-recommendations" element={<SmartRecommendations />} />
+            <Route path="/advanced-analytics" element={<AdvancedAnalytics />} />
+            <Route path="/weather" element={<Weather />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <ChatBot />

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
-import { ShoppingBag, Users, BookOpen, ShieldCheck, TrendingUp, Store, Package } from "lucide-react";
+import { ShoppingBag, Users, BookOpen, ShieldCheck, TrendingUp, Store, Package, Bug, Sprout, Sparkles, BarChart3, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -40,6 +40,11 @@ const FarmerDashboard = () => {
     { to: "/marketplace", icon: Store, label: "Marketplace" },
     { to: "/orders", icon: Package, label: "My Orders" },
     { to: "/price-prediction", icon: TrendingUp, label: "Price Prediction" },
+    { to: "/crop-health", icon: Bug, label: "Crop Disease Detection" },
+    { to: "/yield-prediction", icon: Sprout, label: "Yield Prediction" },
+    { to: "/smart-recommendations", icon: Sparkles, label: "Smart Tips" },
+    { to: "/advanced-analytics", icon: BarChart3, label: "Price Analytics" },
+    { to: "/weather", icon: Cloud, label: "Weather Advisory" },
     { to: "/group-buy", icon: Users, label: "Join Group Buy" },
     { to: "/verify", icon: ShieldCheck, label: "Upload Verification" },
     { to: "/learn", icon: BookOpen, label: "Learning Hub" },
