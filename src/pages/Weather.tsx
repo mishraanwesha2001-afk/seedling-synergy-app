@@ -32,10 +32,17 @@ const alertIcon = (type: string) => {
 
 const urgencyColor: Record<string, string> = { high: "border-destructive/30 bg-destructive/5", medium: "border-accent/30 bg-accent/5", low: "border-border bg-card" };
 
+const INDIAN_STATES = [
+  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana",
+  "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
+  "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu",
+  "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal", "Delhi"
+];
+
 const Weather = () => {
   const { user, loading: authLoading } = useAuth();
   const { toast } = useToast();
-  const [location, setLocation] = useState("Delhi, India");
+  const [selectedState, setSelectedState] = useState("Delhi");
   const [cropTypes, setCropTypes] = useState("Wheat, Rice");
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<WeatherData | null>(null);
@@ -44,7 +51,7 @@ const Weather = () => {
     setLoading(true);
     try {
       // Call OpenWeather API directly from frontend
-      const locationQuery = location || "Delhi, India";
+      const locationQuery = `${selectedState}, India`;
 
       // Get coordinates
       const geoResponse = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(locationQuery)}&limit=1&appid=48ba05804bd0e1314635da04368a7c7c`);
@@ -133,8 +140,8 @@ const Weather = () => {
   };
 
   useEffect(() => {
-    if (user) fetchWeather();
-  }, [user]);
+    if (user && selectedState) fetchWeather();
+  }, [user, selectedState]);
 
   if (authLoading) return <div className="min-h-screen flex items-center justify-center"><Loader2 className="h-8 w-8 animate-spin text-primary" /></div>;
   if (!user) return <Navigate to="/login" replace />;
@@ -155,7 +162,21 @@ const Weather = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="p-5 rounded-xl bg-card border border-border shadow-card mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-              <div className="space-y-1.5"><Label>Location</Label><Input value={location} onChange={(e) => setLocation(e.target.value)} /></div>
+              <div className="space-y-1.5">
+                <Label>State</Label>
+                <Select value={selectedState} onValueChange={setSelectedState}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a state" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {INDIAN_STATES.map((state) => (
+                      <SelectItem key={state} value={state}>
+                        {state}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
               <div className="space-y-1.5"><Label>Crops</Label><Input value={cropTypes} onChange={(e) => setCropTypes(e.target.value)} /></div>
               <Button onClick={fetchWeather} disabled={loading}>
                 {loading ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <RefreshCw className="h-4 w-4 mr-2" />}Update
@@ -172,7 +193,7 @@ const Weather = () => {
               {/* Current Weather */}
               {data.current && (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-6 rounded-2xl bg-card border border-border shadow-elevated">
-                  <h2 className="font-bold text-lg text-foreground mb-4">Current Conditions — {location}</h2>
+                  <h2 className="font-bold text-lg text-foreground mb-4">Current Conditions — {selectedState}</h2>
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                     <div className="text-center">
                       <Thermometer className="h-8 w-8 text-destructive mx-auto mb-1" />
