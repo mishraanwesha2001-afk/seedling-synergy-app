@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+Seedling Synergy App
+A comprehensive web platform designed to empower farmers with modern tools and community support. Built to bridge the gap between traditional farming practices and digital innovation, providing real-time insights, marketplace access, and collaborative features for agricultural communities.
 
-## Project info
+🌾 Features
+Farmer Dashboard: Personalized dashboard for managing farm activities, tracking yields, and accessing analytics
+Marketplace: Buy and sell agricultural products, equipment, and supplies
+Mandi Prices: Real-time marketprice information for various crops and commodities
+Weather Integration: Current weather conditions and forecasts to aid farming decisions
+Yield Prediction: AI-powered predictions for crop yields based on historical data and conditions
+Price Prediction: Forecasting market prices to help with planning and sales
+Community Forums: Discussion boards for farmers to share knowledge, ask questions, and collaborate
+Equipment Sharing: Platform for sharing farming equipment and resources
+Events & Success Stories: Community events and farmer success stories for inspiration
+Group Buying: Collective purchasing to get better deals on supplies
+Smart Recommendations: Personalized recommendations for crops, fertilizers, and farming practicesAdmin Panel: Administrative tools for managing the platform and users
+Notification System: Real-time notifications for important updates and alerts
+🛠️ Tech Stack
+Frontend: React 18, TypeScript, Vite
+Styling: Tailwind CSS, Radix UI components
+Backend: Supabase (PostgreSQL, Authentication, Storage, Edge Functions)
+Testing: Vitest
+Build Tools: ESLint, PostCSS
+Deployment: GitHub Pages
+🚀 Installation
+Prerequisites
+Node.js (version 18 or higher)
+npm or yarnSetup
+Clone the repository
+git clone https://github.com/R-ROHIT071/seedling-synergy-app.git
+cd seedling-synergy-app
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Install dependencies
+npm install
 
-## How can I edit this code?
+Environment Setup
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Create a .env file in the root directory
+Add your Supabase configuration:
+Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+Build for production
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+📖 Usage
+Sign Up/Login: Create an account or log in to access the platform
+Dashboard: View your personalized dashboard with key metrics and insights
+Marketplace: Browse and purchase agricultural products
+Community: Join discussions and participate in community events
+Analytics: Access weather data, price predictions, and yield forecasts
+🧪 Testing
+Run the test suite:
+npm test
 
-**Use GitHub Codespaces**
+🤝 Contributing
+We welcome contributions! Please follow these steps:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Fork the repository
+Create a feature branch (git checkout -b feature/amazing-feature)
+Commit your changes (git commit -m 'Add amazing feature')
+Push to the branch (git push origin feature/amazing-feature)
+Open a Pull Request
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## What technologies are used for this project?
+📞 Contact
+For questions or support, please open an issue on GitHub or contact the maintainers.
 
-This project is built with:
+Empowering farmers with technology for a sustainable future. 🌱## 🤝 Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+We welcome contributions! Please follow these steps:
 
-## How can I deploy this project?
+Fork the repository
+Create a feature branch (git checkout -b feature/amazing-feature)
+Commit your changes (git commit -m 'Add amazing feature')
+Push to the branch (git push origin feature/amazing-feature)
+Open a Pull Request
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+📞 Contact
+For questions or support, please open an issue on GitHub or contact the maintainers.
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Empowering farmers with technology for a sustainable future. 🌱
