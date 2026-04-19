@@ -1,0 +1,1 @@
+import{u as o,j as s}from"./index-DcLbtvV6.js";import{N as e,d as t}from"./NavBar-B93LQqOx.js";const i=({children:a})=>{const{role:r}=o();return s.jsxs("div",{className:"min-h-screen bg-background",children:[s.jsx(e,{}),s.jsx("main",{className:"pt-16",children:a}),r!=="admin"&&s.jsx(t,{})]})};export{i as P};
